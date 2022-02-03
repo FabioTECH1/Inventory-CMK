@@ -59,8 +59,10 @@ class InventoryController extends Controller
         $request->validate([
             'id' => 'required',
         ]);
-        $invent = inventory::where('id', $request->id)->delete();
+        $invent = inventory::where('id', $request->id)->first();
         if ($invent) {
+            $invent->delete();
+            $user->cart()->where('name', $invent->name)->delete();
             return response()->json(['status' => 200, 'info' => 'Deleted Successfully']);
         } else
             return response()->json(['error' => 'product does not exist']);
