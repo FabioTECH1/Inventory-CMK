@@ -8,7 +8,7 @@
 </p>
 
 <b>Procedure to follow</b><br>
-php artisan migrate (to migrate tables the database)
-php artisan db:seed (seed admin account) username-favour, passwor-123456
+php artisan migrate (to migrate tables the database)<br>
+php artisan db:seed (seed admin account) username-favour, passwor-123456<br>
 
 php artisan serve
