@@ -23,16 +23,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/register', [LoginController::class, 'register']);
 
-Route::get('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::middleware('auth:api')->post('/admin/create', [InventoryController::class, 'adminCreate']);
 
 Route::middleware('auth:api')->get('/read', [InventoryController::class, 'read']);
 
-Route::middleware('auth:api')->post('/admin/update', [InventoryController::class, 'adminUpdate']);
+Route::middleware('auth:api')->patch('/admin/update', [InventoryController::class, 'adminUpdate']);
 
-Route::middleware('auth:api')->post('/admin/delete', [InventoryController::class, 'adminDelete']);
+Route::middleware('auth:api')->delete('/admin/delete', [InventoryController::class, 'adminDelete']);
 
 Route::middleware('auth:api')->post('/add_to_cart', [CartController::class, 'addToCart']);
 
-Route::middleware('auth:api')->post('/remove_from_cart', [CartController::class, 'removeFromCart']);
+Route::middleware('auth:api')->delete('/remove_from_cart', [CartController::class, 'removeFromCart']);
