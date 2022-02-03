@@ -15,16 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
         User::create([
             'username' => 'favour',
-            'password' => Hash::make(123456),
+            'password' => Hash::make(inventorycnk),
             'type' => 'admin'
-        ]);
-        User::create([
-            'username' => 'faruk',
-            'password' => Hash::make(123456),
         ]);
     }
 }
