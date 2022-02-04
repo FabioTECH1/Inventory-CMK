@@ -15,3 +15,5 @@ JWT_SECRET=wnXgt0K6TRmEUoRtMJWt8siKrn20bgBhjrVTVNbshG9PpJc06SJtJLd7P926BI0x</mar
 <p>php artisan migrate (to migrate tables to the database)<p>
 <p>php artisan db:seed (seed admin account) username-favour, password-inventorycnk</p>
 <p>php artisan serve</p>
+
+<p>Click <a href='https://documenter.getpostman.com/view/16473358/UVeFP7VM'>here</a> for the documentation</p>
