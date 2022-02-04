@@ -7,8 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<b>Procedure to follow</b><br>
-php artisan migrate (to migrate tables the database)<br>
-php artisan db:seed (seed admin account) username-favour, passwor-inventorycnk<br>
+<b><p>Procedure to follow</p></b><br>
 
-php artisan serve
+<p>Create a database using db name 'inventcnk'</p>
+<p>php artisan migrate (to migrate tables to the database)<p>
+<p>php artisan db:seed (seed admin account) username-favour, passwor-inventorycnk</p>
+<p>php artisan serve</p>
