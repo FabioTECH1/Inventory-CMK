@@ -4,17 +4,20 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\cart;
 use App\Models\inventory;
 use App\Models\User;
 
 class InventoryController extends Controller
 {
+    // Read inventory (admin and user)
     public function read()
     {
         $inventory = inventory::get();
         return response()->json(['status' => 200, 'info' => $inventory]);
     }
 
+    // Admin add to inventory
     public function adminCreate(Request $request)
     {
         $user = User::where('id', auth()->user()->id)->where('type', 'admin')->first();
@@ -26,10 +29,11 @@ class InventoryController extends Controller
             'price' => 'required | integer',
             'quantity' => 'required | integer',
         ]);
-
         $invent =  inventory::create($invent);
         return response()->json(['status' => 200, 'info' => $invent, 'Created Successfully']);
     }
+
+    // Admin update inventory
     public function adminUpdate(Request $request)
     {
         $user = User::where('id', auth()->user()->id)->where('type', 'admin')->first();
@@ -50,6 +54,9 @@ class InventoryController extends Controller
         } else
             return response()->json(['error' => 'product does not exist']);
     }
+
+
+    // Admin Delete from inventory
     public function adminDelete(Request $request)
     {
         $user = User::where('id', auth()->user()->id)->where('type', 'admin')->first();

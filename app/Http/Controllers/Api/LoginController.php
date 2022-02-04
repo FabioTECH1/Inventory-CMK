@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
+    // Registrer new user
     public function register(Request $request)
     {
         $request->validate([
@@ -21,6 +22,8 @@ class LoginController extends Controller
         ]);
         return response()->json(['status' => 200, 'info' => 'Registration Successful']);
     }
+
+    // Login for admin/user to generate jwt token
     public function login(Request $request)
     {
         $creds = $request->only('username', 'password');

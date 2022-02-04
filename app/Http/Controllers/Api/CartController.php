@@ -11,6 +11,7 @@ use App\Models\User;
 
 class CartController extends Controller
 {
+    // User add to cart
     public function addToCart(Request $request)
     {
         $request->validate([
@@ -33,6 +34,8 @@ class CartController extends Controller
             return response()->json(['error' => 'product does not exist']);
         }
     }
+
+    // User remove from cart
     public function removeFromCart(Request $request)
     {
         $request->validate([
