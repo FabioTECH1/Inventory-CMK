@@ -9,7 +9,9 @@
 
 <b><p>Procedure to follow</p></b>
 
-<p>Create a database using db name 'inventcnk'</p>
+<p>Set up an an .env file with a dB name of your choice and create a database of same name.</p>
+<p>Post the following in your env file <br><mark>JWT_TTL=1440<br>
+JWT_SECRET=wnXgt0K6TRmEUoRtMJWt8siKrn20bgBhjrVTVNbshG9PpJc06SJtJLd7P926BI0x</mark></p>
 <p>php artisan migrate (to migrate tables to the database)<p>
-<p>php artisan db:seed (seed admin account) username-favour, passwor-inventorycnk</p>
+<p>php artisan db:seed (seed admin account) username-favour, password-inventorycnk</p>
 <p>php artisan serve</p>
