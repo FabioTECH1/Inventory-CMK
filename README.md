@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<b><p>Procedure to follow</p></b><br>
+<b><p>Procedure to follow</p></b>
 
 <p>Create a database using db name 'inventcnk'</p>
 <p>php artisan migrate (to migrate tables to the database)<p>
