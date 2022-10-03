@@ -7,13 +7,70 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<b><p>Procedure to follow</p></b>
+# Todo App
+## Getting started
 
-<p>Set up an an .env file with a dB name of your choice and create a database of same name.</p>
-<p>Post the following in your env file <br><mark>JWT_TTL=1440<br>
-JWT_SECRET=wnXgt0K6TRmEUoRtMJWt8siKrn20bgBhjrVTVNbshG9PpJc06SJtJLd7P926BI0x</mark></p>
-<p>php artisan migrate (to migrate tables to the database)<p>
-<p>php artisan db:seed (seed admin account) username-favour, password-inventorycnk</p>
-<p>php artisan serve</p>
+Assuming you've already installed on your machine: PHP (>= 7.0.0), [Laravel](https://laravel.com) and [Composer](https://getcomposer.org)
 
-<p>Click <a href='https://documenter.getpostman.com/view/16473358/UVeFP7VM'>here</a> for the documentation</p>
+Clone the repository
+``` bash
+git clone https://github.com/FabioTECH1/Inventory-NCK.git
+```
+
+Switch to the repo folder
+``` bash
+cd Inventory-NCK
+```
+
+Install all the dependencies using composer
+``` bash
+composer install
+composer require tymon/jwt-auth
+```
+
+## Create .env file and make the required configuration changes in it, run the database migrations (**Set the database connection in .env before migrating**)
+
+
+Publish the config 
+``` bash
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+```
+
+Generate a new JWT authentication secret key to the .env
+``` bash
+php artisan jwt:secret
+```
+
+Migrate to database
+``` bash
+php artisan migrate
+```
+
+Seed Admin Account
+``` bash
+#username-favour, password-inventorycnk
+php artisan db:seed
+```
+
+Then launch the server:
+``` bash
+php artisan serve
+```
+
+## Testing API
+The api can now be accessed at
+``` bash
+http://127.0.0.1:8000/api
+```
+[Postman Documentation](https://documenter.getpostman.com/view/16473358/UVeFP7VM) for detailed documentation and testing
+
+----------
+ 
+# Authentication
+ 
+This applications uses JSON Web Token (JWT) to handle authentication. The token is passed with each request using the `Authorization` header with `Token` scheme. The JWT authentication middleware handles the validation and authentication of the token. Please check the following sources to learn more about JWT.
+ 
+- https://jwt.io/introduction/
+- https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html
+
+----------
